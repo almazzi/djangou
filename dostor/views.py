@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import *
 from dostor.models import Dostor
 from django.core.urlresolvers import reverse
+from dostor.forms import DostorForm
 
 class DostorListView(ListView):
     model = Dostor
@@ -11,6 +12,8 @@ class DostorListView(ListView):
 class DostorCreateView(CreateView):
     model = Dostor
     template_name = 'dostor_edit.html'
+    form_class = DostorForm
+
 
     def get_success_url(self):
         return reverse('dos-list')
@@ -23,6 +26,7 @@ class DostorCreateView(CreateView):
 class DostorUpdateView(UpdateView):
     model = Dostor
     template_name = 'dostor_edit.html'
+    form_class = DostorForm
 
     def get_success_url(self):
         return reverse('dos-list')
