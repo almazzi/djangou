@@ -1,0 +1,11 @@
+{% extends 'base2.html' %}
+{% block ochur %}
+    <h1>Delete dos</h1>
+    <p>are you sure to delete {{ dostor }}?</p>
+    <form action="{% url "dos-delete" pk=dostor.id %}" method="post">
+    {% csrf_token %}
+        <input type="submit" value="Yes,delete"/>
+        <a href="{% url "dos-list" %}">No,cancel</a>
+
+    </form>
+{% endblock %}

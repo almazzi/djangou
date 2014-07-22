@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen"/>
+</head>
+<body>
+<div>
+{% block list %}
+
+{% endblock %}
+</div>
+<div>
+    {% block form %}
+
+    {% endblock %}
+</div>
+<div>
+    {% block ochur %}
+
+    {% endblock %}
+</div>
+<div>
+    {% block content %}
+
+    {% endblock %}
+</div>
+<script src="{% static '' %}"></script>
+</body>
+</html>

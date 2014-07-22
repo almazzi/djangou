@@ -1,0 +1,9 @@
+{% extends 'base2.html' %}
+{% block detail %}
+
+    <h1>{{ dostor }}</h1>
+    <p>{{ dostor.phone_number }}</p>
+    <p>{{ dostor.email }}</p>
+
+    <a href="{% url "dos-list" %}"> back to list</a>
+{% endblock %}

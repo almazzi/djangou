@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block ochur %}
+
+    <h1>Delete Contact</h1>
+    <p>Are you sure to delete {{ contact }}?</p>
+    <form action="{% url "contact-delete" pk=contact.id %}" method="post">
+    {% csrf_token %}
+        <input type="submit" value="Yes,delete"/>
+        <a href="{% url "contacts-list" %}">No,cancel</a>
+    </form>
+{% endblock %}

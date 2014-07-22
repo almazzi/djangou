@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block list %}
+<h1>Contacts</h1>
+
+
+
+<ul>
+  {% for contact in object_list %}
+    <li class="contact">{{ contact }}
+    <a style="margin-left: 20px; font-size: 0.75em;color: #269abc" href="{% url "contact-edit" pk=contact.id %}">edit</a>
+        <a href="{{  contact.get_absolute_url }}">Detail</a>
+    </li>
+  {% endfor %}
+    <a style="margin-left: 20px; font-size: 1.5em;color: #269abc" href="{% url "contact-new" %}"> create new contact</a>
+</ul>
+{% endblock %}

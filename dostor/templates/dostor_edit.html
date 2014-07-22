@@ -1,0 +1,20 @@
+{% extends 'base2.html' %}
+{% block edit %}
+    {% if dostor.id %}
+    <h1>Edit dos</h1>
+    {% else %}
+    <h1>Add dos</h1>
+    {% endif %}
+    <form action="{{ action }}" method="POST">
+        {% csrf_token %}
+    <ul>
+   {{ form.as_ul }}
+    </ul>
+
+    <input type="submit" value="save" id="save_contact"/>
+    </form>
+    <a href="{% url "dos-list" %}"> back to list</a>
+    {% if dostor.id %}
+    <a href="{% url "dos-delete" pk=dostor.id %}">Delete</a>
+{% endif %}
+{% endblock %}
